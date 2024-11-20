@@ -11,7 +11,9 @@ namespace FinanceManagementSystem.IServices
         Task<Income> UpdateIncomeAsync(int id,IncomeDto incomeDto);
        Task<bool> DeleteIncomeAsync(int id);
 
-      
+        List<string> GetCategories();
+
+
 
     }
 }

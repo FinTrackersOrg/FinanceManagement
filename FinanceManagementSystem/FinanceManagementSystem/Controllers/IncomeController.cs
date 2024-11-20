@@ -3,6 +3,7 @@ using FinanceManagementSystem.IServices;
 using FinanceManagementSystem.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinanceManagementSystem.Controllers
 {
@@ -105,5 +106,12 @@ namespace FinanceManagementSystem.Controllers
 
             return NoContent();
         }
+        [HttpGet("GetCategories")]
+        public IActionResult GetCategories()
+        {
+            var categories = _incomeService.GetCategories();
+            return Ok(categories);
+        }
+
     }
 }

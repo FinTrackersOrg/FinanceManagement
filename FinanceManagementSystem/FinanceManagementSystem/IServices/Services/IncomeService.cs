@@ -66,6 +66,14 @@ namespace FinanceManagementSystem.IServices.Services
             return income;
         }
 
+        public List<string> GetCategories()
+        {
+            // Fetch distinct categories (sources) from the database
+            return _dbContext.Incomes
+                .Select(i => i.Source)
+                .Distinct()
+                .ToList();
+        }
 
 
     }
